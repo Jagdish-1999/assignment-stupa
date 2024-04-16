@@ -40,7 +40,13 @@ const Header = () => {
 								setIsSelected(header.href);
 							}}
 							className={`${
-								header.href === isSelected ? styles.isSelected : ""
+								header.href === isSelected && !menuClicked
+									? styles.isSelected
+									: ""
+							}  ${
+								header.href === isSelected && menuClicked
+									? styles.isMobileNavSelected
+									: ""
 							}`}>
 							<Link href={header.href}>
 								<span>
