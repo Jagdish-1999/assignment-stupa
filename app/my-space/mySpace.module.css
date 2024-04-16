@@ -1,0 +1,6 @@
+.container {
+	transform: translateY(50px);
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
