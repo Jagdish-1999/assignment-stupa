@@ -1,6 +1,7 @@
 "use client";
 import React, { useContext, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { DARK, MyContext, WHITE } from "@/providers/ContextProvider";
 import Dark from "@/icons/Dark";
@@ -10,10 +11,11 @@ import { headerData } from "@/contstants/data";
 import styles from "./header.module.css";
 
 const Header = () => {
+	const pathname = usePathname();
 	const { theme, setTheme } = useContext(MyContext);
 	const fill = theme === DARK ? "#000" : "#fff";
 	const [menuClicked, setMenuClicked] = useState(false);
-	const [isSelected, setIsSelected] = useState("/");
+	const [isSelected, setIsSelected] = useState(pathname);
 
 	return (
 		<div
